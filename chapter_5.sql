@@ -32,7 +32,49 @@ ON e.employee_id = jh.employee_id
 GROUP BY e.employee_id;
 
 -- e
+SELECT department_name, job_title, COUNT(employee_id)
+FROM Departments d
+JOIN Employees e
+ON d.department_id = e.department_id
+JOIN Jobs j
+ON e.job_id = j.job_id
+GROUP BY d.department_name, j.job_title;
+
+-- f
+SELECT e1.last_name, COUNT(e2.employee_id) "Hired Before"
+FROM Employees e1 LEFT JOIN Employees e2
+ON e1.hire_date > e2.hire_date
+GROUP by e1.employee_id, e1.last_name;
+
+-- g
+SELECT e1.last_name, COUNT(DISTINCT e2.employee_id) "Hired Before", COUNT(DISTINCT e3.employee_id) "Hire After"
+FROM Employees e1
+LEFT JOIN Employees e2
+ON e1.hire_date > e2.hire_date
+LEFT JOIN Employees e3
+ON e1.hire_date < e3.hire_date
+GROUP by e1.employee_id, e1.last_name;
+
+-- h
+SELECT e1.employee_id
+FROM Employees e1 JOIN Employees e2
+ON e1.salary > e2.salary
+GROUP BY e1.employee_id
+HAVING COUNT(*) >= 3;
+
+-- i
+SELECT e1.employee_id, COUNT(e2.employee_id) + 1 "Rank"
+FROM Employees e1 LEFT JOIN Employees e2
+ON e1.salary < e2.salary
+GROUP BY e1.employee_id;
+
+-- j
+SELECT e1.first_name, e1.salary
+FROM Employees e1 LEFT JOIN Employees e2
+ON e1.salary < e2.salary
+GROUP BY e1.employee_id, e1.first_name, e1.salary
+HAVING COUNT(e2.employee_id) < 3;
 
 -----------------------------------------------------------------------------
------------------------------ END OF CHAPTER 2 ------------------------------
+----------------------------- END OF CHAPTER 5 ------------------------------
 -----------------------------------------------------------------------------
