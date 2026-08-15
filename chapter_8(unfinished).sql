@@ -10,7 +10,9 @@ CREATE TABLE My_Locations AS SELECT * FROM Locations;
 DROP TABLE My_Locations;
 
 
--- Practice 8.2 (no 8.1)
+-- NO 8.1
+
+-- Practice 8.2
 -- a
 UPDATE My_Employees
 SET commission_pct = 0
