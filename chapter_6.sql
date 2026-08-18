@@ -59,6 +59,8 @@ WHERE salary BETWEEN (
     )
 );
 
+-----------------------------------------------------------------------------
+
 -- Practice 6.2
 -- a
 SELECT last_name, salary
