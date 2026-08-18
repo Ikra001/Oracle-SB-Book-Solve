@@ -22,8 +22,11 @@ WHERE employee_id IN (
 );
 
 -- c
-describe locations;
-describe departments;
+SELECT location_id
+FROM Locations
+MINUS
+SELECT location_id
+FROM Departments;
 
 -----------------------------------------------------------------------------
 ----------------------------- END OF CHAPTER 7 ------------------------------
