@@ -2,10 +2,10 @@
 ---------------------------- START OF CHAPTER 8 -----------------------------
 -----------------------------------------------------------------------------
 
--- COPYING EMPLOYEES IN MY_EMPLOYEES TO MODIFY FREELY (DROP AFTER USE)
+-- COPYING EMPLOYEES TO MY_EMPLOYEES TO MODIFY FREELY (DROP AFTER USE)
 CREATE TABLE My_Employees AS SELECT * FROM Employees;
 DROP TABLE My_Employees;
--- COPYING LOCATIONS IN MY_LOCATIONS TO MODIFY FREELY (DROP AFTER USE)
+-- COPYING LOCATIONS TO MY_LOCATIONS TO MODIFY FREELY (DROP AFTER USE)
 CREATE TABLE My_Locations AS SELECT * FROM Locations;
 DROP TABLE My_Locations;
 
